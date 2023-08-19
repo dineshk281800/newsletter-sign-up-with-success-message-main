@@ -12,6 +12,7 @@
       href="/assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    <!-- <link rel="stylesheet" href="/css/general.css" /> -->
 
     <title>Newsletter sign-up form with success message</title>
   </head>
@@ -60,15 +61,23 @@
           </div>
           <div class="subs-box">
             <form action="#">
-              <label for="">Email address</label>
+              <div class="label">
+                <label for="">Email address</label>
+                <span id="error-msg"></span>
+              </div>
               <input
                 type="email"
                 name=""
                 class="email"
+                id="email"
                 placeholder="email@company.com"
+                onkeyup="validateEmail()"
               />
-              <button type="submit" class="btn">
-                <a href="#">Subscribe to monthly newsletter</a>
+              <button type="submit" class="btn" id="">
+                <a
+                  href="../newsletter-sign-up-with-success-message-main/thanks msg/index2.html"
+                  >Subscribe to monthly newsletter</a
+                >
               </button>
             </form>
           </div>
@@ -82,5 +91,27 @@
         </div>
       </div>
     </section>
+
+    <script>
+      var email = document.getElementById("email");
+      var errorMsg = document.getElementById("error-msg");
+
+      function validateEmail() {
+        if (
+          !email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
+        ) {
+          errorMsg.innerHTML = "Valid email required";
+          errorMsg.style.color = "red";
+          email.style.border = "1px solid red";
+          email.style.background = "#e9988b";
+          return false;
+        }
+        errorMsg.innerHTML = "";
+        errorMsg.style.color = "#000";
+        email.style.border = "#36384e";
+        email.style.background = "#fff";
+        return true;
+      }
+    </script>
   </body>
 </html>

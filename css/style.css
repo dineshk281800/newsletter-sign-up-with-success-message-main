@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +11,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
@@ -30,7 +32,8 @@ a {
 .card,
 .details,
 .subs-box form,
-.step-para {
+.step-para,
+.label {
   display: flex;
 }
 
@@ -99,6 +102,10 @@ label {
   margin-bottom: 2rem;
 }
 
+.label {
+  justify-content: space-between;
+}
+
 .email,
 .btn {
   /* outline: none; */
@@ -109,11 +116,22 @@ label {
 }
 
 .email {
+  border: 1px solid var(--Grey);
+}
+
+.email:hover {
   border: 1px solid var(--Charcoal-Grey);
 }
 
 .btn {
   background-color: var(--Dark-Slate-Grey);
+  cursor: pointer;
+  /* color: #9294a0; */
+}
+
+.btn:hover {
+  background: linear-gradient(to bottom right, #ff576c, #ff644c);
+  transition: all 0.3s;
 }
 
 .btn a {
